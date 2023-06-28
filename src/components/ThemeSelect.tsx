@@ -48,6 +48,9 @@ export default component$(() => {
           🌞
         </span>
       </button>{" "}
+      <label for="theme-select" class="sr-only">
+        Toggle Darkmode
+      </label>
       <input
         type="checkbox"
         class="toggle mx-2"
