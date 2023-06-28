@@ -52,15 +52,15 @@ export default component$(() => {
           </a>{" "}
           built with qwik
         </li>
-        <p>
-          Most of these projects are still online, so if you have questions
-          regarding a specific one, please{" "}
-          <a href="mailto:contact@rackles.io" class="link-hover link">
-            contact
-          </a>{" "}
-          me.
-        </p>
       </ul>
+      <p>
+        Most of these projects are still online, so if you have questions
+        regarding a specific one, please{" "}
+        <a href="mailto:contact@rackles.io" class="link-hover link">
+          contact
+        </a>{" "}
+        me.
+      </p>
       <h2 id="various">Other skills:</h2>
       <ul>
         <li>Next.js page performance optimizations</li>

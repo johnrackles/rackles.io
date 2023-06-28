@@ -35,13 +35,13 @@ export default component$(() => {
   });
 
   return (
-    <div aria-hidden class="flex flex-row items-center">
+    <div class="flex flex-row items-center">
       <button
         onClick$={() => {
           theme.value = "winter";
         }}
       >
-        🌞
+       <span role="img" aria-aria-label="Sun with a face, used to select light mode">🌞</span>
       </button>{" "}
       <input
         type="checkbox"
@@ -57,7 +57,7 @@ export default component$(() => {
           theme.value = "night";
         }}
       >
-        🌚
+        <span role="img" aria-aria-label="Moon with a face, used to select dark mode">🌚</span>
       </button>
     </div>
   );
