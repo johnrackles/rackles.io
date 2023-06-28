@@ -4,18 +4,18 @@ import ThemeSelect from "./ThemeSelect";
 
 export const Footer = component$(() => {
   return (
-    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
-      <div class="items-center grid-flow-col gap-4">
-        <a class="link link-hover" href="mailto:contact@rackles.io">
+    <footer class="footer footer-center rounded bg-base-200 p-10 text-base-content">
+      <div class="grid-flow-col items-center gap-4">
+        <Link class="link-hover link" href="/contact">
           Contact
-        </a>
-        <Link class="link link-hover" href="/imprint">
+        </Link>
+        <Link class="link-hover link" href="/imprint">
           Imprint
         </Link>
       </div>
       <div>
         <div class="grid grid-flow-col gap-4">
-          <a href="https://github.com/johnrackles/rackles.io" class="w-6 h-6">
+          <a href="https://github.com/johnrackles/rackles.io" class="h-6 w-6">
             <svg
               role="img"
               viewBox="0 0 24 24"
@@ -30,7 +30,7 @@ export const Footer = component$(() => {
           </a>
           <a
             href="https://www.linkedin.com/in/johannes-rackles"
-            class="w-6 h-6"
+            class="h-6 w-6"
           >
             <svg
               role="img"
@@ -47,8 +47,9 @@ export const Footer = component$(() => {
         </div>
       </div>
 
-      <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
       <ThemeSelect />
+
+      <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
     </footer>
   );
 });

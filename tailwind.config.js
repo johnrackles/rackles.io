@@ -5,5 +5,7 @@ module.exports = {
     extend: { fontFamily: { sans: ['Recursive Variable', "sans-serif"] } },
   },
   daisyui: { themes: ["night", "winter"], darkTheme: "night" },
-  plugins: [require("daisyui")],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require("daisyui")],
 };
