@@ -11,7 +11,10 @@ export default component$(() => {
         </span>
       </h1>
 
-      <p>My name is John and I am a Frontend Developer.</p>
+      <p>
+        My name is John and I am a Frontend Developer.{" "}
+        <Link href="/contact">Send me an E-Mail!</Link>
+      </p>
       <p>
         I've been working in this field for 8+ years now, most of this time in
         online agencies, doing various{" "}
@@ -52,7 +55,7 @@ export default component$(() => {
         <p>
           Most of these projects are still online, so if you have questions
           regarding a specific one, please{" "}
-          <a href="mailto:contact@rackles.io" class="link link-hover">
+          <a href="mailto:contact@rackles.io" class="link-hover link">
             contact
           </a>{" "}
           me.

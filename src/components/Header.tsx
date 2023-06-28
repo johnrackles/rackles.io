@@ -4,9 +4,18 @@ import { Link } from "@builder.io/qwik-city";
 export const Header = component$(() => {
   return (
     <div class="navbar bg-primary text-primary-content">
-      <Link href="/" class="btn btn-ghost normal-case text-xl">
-        rackles.io
-      </Link>
+      <div class="flex-1">
+        <Link href="/" class="btn-ghost btn text-xl normal-case">
+          rackles.io
+        </Link>
+      </div>
+      <div class="flex-none">
+        <ul class="menu menu-horizontal px-1">
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
+        </ul>
+      </div>
     </div>
   );
 });
