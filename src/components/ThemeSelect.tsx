@@ -41,7 +41,12 @@ export default component$(() => {
           theme.value = "winter";
         }}
       >
-       <span role="img" aria-aria-label="Sun with a face, used to select light mode">🌞</span>
+        <span
+          role="img"
+          aria-label="Sun with a face, used to select light mode"
+        >
+          🌞
+        </span>
       </button>{" "}
       <input
         type="checkbox"
@@ -57,7 +62,12 @@ export default component$(() => {
           theme.value = "night";
         }}
       >
-        <span role="img" aria-aria-label="Moon with a face, used to select dark mode">🌚</span>
+        <span
+          role="img"
+          aria-label="Moon with a face, used to select dark mode"
+        >
+          🌚
+        </span>
       </button>
     </div>
   );
