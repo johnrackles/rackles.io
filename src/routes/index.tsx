@@ -1,5 +1,5 @@
 import { component$ } from "@builder.io/qwik";
-import { Link, type DocumentHead } from "@builder.io/qwik-city";
+import { type DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
@@ -13,7 +13,9 @@ export default component$(() => {
 
       <p>
         My name is John and I am a Frontend Developer.{" "}
-        <Link href="/contact">Send me an E-Mail!</Link>
+        <a href="mailto:contact@rackles.io" class="link">
+          Send me an E-Mail!
+        </a>
       </p>
       <p>
         I've been working in this field for 8+ years now, most of this time in
@@ -68,7 +70,10 @@ export default component$(() => {
       </ul>
       <p>
         If this sounds interesting to you, please feel free to{" "}
-        <Link href="/contact">contact</Link> me{" "}
+        <a href="mailto:contact@rackles.io" class="link">
+          contact
+        </a>{" "}
+        me{" "}
         <span role="img" aria-label="smiling face">
           😊
         </span>

@@ -6,9 +6,9 @@ export const Footer = component$(() => {
   return (
     <footer class="footer footer-center rounded bg-base-200 p-10 text-base-content">
       <div class="grid-flow-col items-center gap-4">
-        <Link class="link-hover link" href="/contact">
+        <a href="mailto:contact@rackles.io" class="link-hover link">
           Contact
-        </Link>
+        </a>
         <Link class="link-hover link" href="/imprint">
           Imprint
         </Link>

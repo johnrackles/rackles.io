@@ -12,7 +12,7 @@ export const Header = component$(() => {
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
           <li>
-            <Link href="/contact">Contact</Link>
+            <a href="mailto:contact@rackles.io">Contact</a>
           </li>
         </ul>
       </div>
