@@ -22,5 +22,5 @@
     }
   },
   "files": ["./.eslintrc.cjs", "./tailwind.config.js"],
-  "include": ["src", "./*.d.ts"]
+  "include": ["src", "./*.d.ts", "./postcss.config.js"]
 }
