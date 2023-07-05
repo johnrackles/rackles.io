@@ -38,11 +38,6 @@ export default component$(() => {
       <body lang="en">
         <RouterOutlet />
         <ServiceWorkerRegister />
-        <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "9d448cd01173468aa9019967e90fa069"}'
-        ></script>
       </body>
     </QwikCityProvider>
   );
