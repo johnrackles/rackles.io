@@ -42,3 +42,6 @@ lerna-debug.log*
 functions/**/*.js
 
 .env
+
+# generate the CV fresh on eery build
+public/CV*.pdf
