@@ -1,5 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { type DocumentHead } from "@builder.io/qwik-city";
+import { content } from "~/content/cv-content";
 
 export default component$(() => {
   return (
@@ -31,14 +32,9 @@ export default component$(() => {
       </p>
       <h2 id="technologies">Technologies:</h2>
       <ul>
-        <li>React / Next.js</li>
-        <li>TypeScript</li>
-        <li>Tailwind</li>
-        <li>tRPC</li>
-        <li>Prisma</li>
-        <li>GraphQL</li>
-        <li>Node.js servers with Express / fastify</li>
-        <li>Hosting on Vercel / Cloudflare Pages / Ubuntu</li>
+        {content.technologies.map((technology) => (
+          <li key={technology}>{technology}</li>
+        ))}
       </ul>
       <p>This list is just an overview, there have been many more.</p>
       <h2 id="projects">Projects:</h2>
