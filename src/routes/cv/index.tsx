@@ -7,7 +7,7 @@ import {
   StyleSheet,
   Text,
   View,
-  renderToStream,
+  renderToBuffer,
 } from "@react-pdf/renderer";
 import { type Style } from "@react-pdf/types";
 import dayjs from "dayjs";
@@ -81,8 +81,8 @@ const ListComponent = ({
 }) => {
   return (
     <View style={{ ...listStyles.list, ...style }}>
-      {entries.map((entry) => (
-        <View style={listStyles.entry}>
+      {entries.map((entry, i) => (
+        <View style={listStyles.entry} key={i}>
           <Text style={listStyles.bullet}>•</Text>
           <Text>{entry}</Text>
         </View>
@@ -164,17 +164,10 @@ const MyDocument = () => (
   </Document>
 );
 
-export const onGet: RequestHandler = async ({ getWritableStream }) => {
-  const writableStream = getWritableStream();
-  const writer = writableStream.getWriter();
+export const onGet: RequestHandler = async ({ send, headers }) => {
+  const pdf = await renderToBuffer(<MyDocument />);
+  headers.append("Content-Type", "application/pdf");
+  headers.append("Cache-Control", "public, max-age=600");
 
-  const stream = await renderToStream(<MyDocument />);
-
-  stream.on("data", (chunk) => {
-    writer.write(chunk);
-  });
-
-  stream.on("end", () => {
-    writer.close();
-  });
+  send(200, pdf);
 };
