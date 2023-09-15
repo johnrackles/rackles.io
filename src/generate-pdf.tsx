@@ -165,5 +165,5 @@ const MyDocument = () => (
 );
 await renderToFile(
   <MyDocument />,
-  path.join(__dirname, "../public/CV_Johanes-Rackles.pdf")
+  path.join(__dirname, "../public/CV_Johannes-Rackles.pdf")
 );

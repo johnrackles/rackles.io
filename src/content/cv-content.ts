@@ -15,6 +15,8 @@ export const content = {
         "Internal trainings for new technologies, for example Next.js, qwik, React and Typescript",
         "Hosting the Next.js Berlin Meetup and giving a talk at the event regarding the viability of Next.js in an ecommerce setting",
         "Implementing a ChatGPT powered chat interface for healthcare providers",
+        "Technical SEO Optimization of ecommerce pages",
+        "Next.js page performance optimization",
       ],
     },
     {
