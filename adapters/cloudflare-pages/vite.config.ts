@@ -15,6 +15,7 @@ export default extendConfig(baseConfig, () => {
         ssg: {
           include: ["/*"],
           origin: "https://rackles.io",
+          exclude:["/cv"]
         },
       }),
     ],
