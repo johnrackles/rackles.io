@@ -10,14 +10,17 @@ export const onRequest: RequestHandler<PlatformCloudflarePages> = (event) => {
     `default-src 'self' 'unsafe-inline'`,
     `font-src 'self' data:`,
     `img-src 'self' 'unsafe-inline' data:`,
-    `script-src 'self' 'unsafe-inline' https: 'nonce-${nonce}' 'strict-dynamic'`,
+    `script-src 'self' 'unsafe-inline' https: 'nonce-${nonce}' ajax.cloudflare.com`,
     `style-src 'self' 'unsafe-inline'`,
     `frame-src 'self' 'nonce-${nonce}'`,
     `object-src 'none'`,
     `base-uri 'self'`,
+    `frame-ancestors 'none`,
   ];
 
   event.headers.set("Content-Security-Policy", csp.join("; "));
   event.headers.set("X-Frame-Options", "DENY");
   event.headers.set("X-Content-Type-Options", "nosniff");
+  event.headers.set("Referrer-Policy", "same-origin");
+  event.headers.set("Cross-Origin-Resource-Policy", "same-origin");
 };
