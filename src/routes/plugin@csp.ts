@@ -20,4 +20,6 @@ export const onRequest: RequestHandler<PlatformCloudflarePages> = (event) => {
   event.headers.set("Content-Security-Policy", csp.join("; "));
   event.headers.set("X-Frame-Options", "DENY");
   event.headers.set("X-Content-Type-Options", "nosniff");
+  event.headers.set("Referrer-Policy", "same-origin");
+  event.headers.set("Cross-Origin-Resource-Policy", "same-origin");
 };
