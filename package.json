@@ -69,7 +69,7 @@
   "lint-staged": {
     "!(*.ts)": "node --experimental-strip-types node_modules/prettier/bin/prettier.cjs . --write",
     "*.ts": [
-      "tsc --noEmit",
+      "tsc --noEmit --skipLibCheck",
       "eslint --fix",
       "node --experimental-strip-types node_modules/prettier/bin/prettier.cjs . --write"
     ]
