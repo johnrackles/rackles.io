@@ -8,7 +8,7 @@ export const onRequest: RequestHandler<PlatformCloudflarePages> = (event) => {
   event.sharedMap.set("@nonce", nonce);
   const csp = [
     `default-src 'self' 'unsafe-inline'`,
-    `font-src 'self' 'unsafe-inline'`,
+    `font-src 'self' data:`,
     `img-src 'self' 'unsafe-inline' data:`,
     `script-src 'self' 'unsafe-inline' https: 'nonce-${nonce}' 'strict-dynamic'`,
     `style-src 'self' 'unsafe-inline'`,
