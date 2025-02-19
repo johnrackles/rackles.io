@@ -15,7 +15,6 @@ export default component$(() => {
       </p>
       <h2>Kontakt</h2>
       <p>
-        Telefon: &#91;Telefonnummer&#93;
         <br />
         E-Mail: contact@rackles.io
       </p>
@@ -25,10 +24,5 @@ export default component$(() => {
 
 export const head: DocumentHead = {
   title: "rackles.io | Imprint",
-  meta: [
-    {
-      name: "description",
-      content: "Contact John Rackles",
-    },
-  ],
+  meta: [{ name: "description", content: "Contact John Rackles" }],
 };

@@ -50,11 +50,14 @@ export const content = {
   ],
   technologies: [
     `React (${dayjs(new Date("2015")).toNow(true)}) / Next.js (${dayjs(
-      new Date("2019")
+      new Date("2019"),
+    ).toNow(true)})`,
+    `Vue (${dayjs(new Date("2024")).toNow(true)}) / Nuxt (${dayjs(
+      new Date("2024"),
     ).toNow(true)})`,
     `TypeScript (${dayjs(new Date("2019")).toNow(true)})`,
     `Node.js servers with Express / fastify (${dayjs(new Date("2019")).toNow(
-      true
+      true,
     )})`,
     `GraphQL (${dayjs(new Date("2019")).toNow(true)})`,
     `Tailwind (${dayjs(new Date("2020")).toNow(true)})`,

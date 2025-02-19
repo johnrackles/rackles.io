@@ -17,9 +17,9 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   return (
-    <div class="grid grid-rows-[auto,1fr,auto] min-h-screen">
+    <div class="grid min-h-screen grid-rows-[auto,1fr,auto]">
       <Header />
-      <main class="font-sans px-4 md:px-8 lg:px-16 py-8 md:py-16 lg:py-32 container mx-auto">
+      <main class="font-recursive container mx-auto px-4 py-8 md:px-8 md:py-16 lg:px-16 lg:py-32">
         <Slot />
       </main>
       <Footer />

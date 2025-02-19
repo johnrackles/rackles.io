@@ -4,7 +4,7 @@ import ThemeSelect from "./ThemeSelect";
 
 export const Footer = component$(() => {
   return (
-    <footer class="footer footer-center rounded bg-base-200 p-10 text-base-content">
+    <footer class="footer footer-center bg-base-200 text-base-content rounded p-10">
       <div class="grid-flow-col items-center gap-4">
         <a href="mailto:contact@rackles.io" class="link-hover link">
           Contact

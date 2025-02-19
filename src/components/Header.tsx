@@ -11,11 +11,11 @@ export const Header = component$(() => {
       </div>
       <div class="flex-none">
         <ul class="menu menu-horizontal px-1">
-          <li>
+          {/*  <li>
             <a href="/CV_Johannes-Rackles.pdf" download>
               Download CV
             </a>
-          </li>
+          </li> */}
           <li>
             <a href="mailto:contact@rackles.io">Contact</a>
           </li>
