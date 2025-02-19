@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, isDev, useServerData } from "@builder.io/qwik";
 import {
   QwikCityProvider,
   RouterOutlet,
@@ -15,16 +15,18 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
+  const nonce = useServerData<string | undefined>("nonce");
 
   return (
     <QwikCityProvider>
       <head>
-        <meta charSet="utf-8" />
+        <meta charset="utf-8" />
         <link rel="manifest" href="/manifest.json" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="icon" type="image/png" href="/favicon.png" />
         <RouterHead />
         <script
+          nonce={nonce}
           dangerouslySetInnerHTML={`
           if (window.matchMedia("(prefers-color-scheme: dark)").matches &&
             localStorage.theme !== 'winter') {
@@ -37,7 +39,7 @@ export default component$(() => {
       </head>
       <body lang="en">
         <RouterOutlet />
-        <ServiceWorkerRegister />
+        {!isDev && <ServiceWorkerRegister nonce={nonce} />}
       </body>
     </QwikCityProvider>
   );
