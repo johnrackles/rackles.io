@@ -15,6 +15,7 @@ export const onRequest: RequestHandler<PlatformCloudflarePages> = (event) => {
     `frame-src 'self' 'nonce-${nonce}'`,
     `object-src 'none'`,
     `base-uri 'self'`,
+    `frame-ancestors 'none`,
   ];
 
   event.headers.set("Content-Security-Policy", csp.join("; "));
