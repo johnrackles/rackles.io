@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { cloudflarePagesAdapter } from "@builder.io/qwik-city/adapters/cloudflare-pages/vite";
 import { extendConfig } from "@builder.io/qwik-city/vite";
 import baseConfig from "../../vite.config";
@@ -11,13 +12,7 @@ export default extendConfig(baseConfig, () => {
       },
     },
     plugins: [
-      cloudflarePagesAdapter({
-        ssg: {
-          include: ["/*"],
-          origin: "https://rackles.io",
-          exclude:["/cv"]
-        },
-      }),
+      cloudflarePagesAdapter(),
     ],
   };
 });

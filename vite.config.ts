@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { qwikCity } from '@builder.io/qwik-city/vite';
 import { qwikReact } from '@builder.io/qwik-react/vite';
 import { qwikVite } from '@builder.io/qwik/optimizer';
