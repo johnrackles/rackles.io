@@ -19,6 +19,5 @@
     "types": ["node", "vite/client"],
     "paths": { "~/*": ["./src/*"] }
   },
-  "files": ["./.eslintrc.cjs", "./tailwind.config.js"],
-  "include": ["src", "./*.d.ts", "./prettier.config.ts"]
+  "include": ["src", "./*.d.ts",]
 }

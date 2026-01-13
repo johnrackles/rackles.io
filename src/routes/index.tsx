@@ -1,10 +1,7 @@
 import { component$ } from "@builder.io/qwik";
-import { type DocumentHead } from "@builder.io/qwik-city";
-import dayjs from "dayjs";
-import relativeTime from "dayjs/plugin/relativeTime";
+import type { DocumentHead } from "@builder.io/qwik-city";
 import { content } from "~/content/cv-content";
-
-dayjs.extend(relativeTime);
+import { dayjs } from "~/lib/dayjs";
 
 export default component$(() => {
   return (
@@ -23,9 +20,8 @@ export default component$(() => {
         </a>
       </p>
       <p>
-        I've been working in this field for{" "}
-        {dayjs(new Date("2015")).toNow(true)} years now, most of this time in
-        online agencies, doing various{" "}
+        I've been working in this field for {dayjs("2015").toNow(true)} years
+        now, most of this time in online agencies, doing various{" "}
         <a href="#projects" class="link">
           projects
         </a>{" "}

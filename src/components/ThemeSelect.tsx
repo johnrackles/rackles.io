@@ -13,8 +13,8 @@ export default component$(() => {
   const theme = useSignal<"night" | "winter" | undefined>();
 
   // on render, set the theme to the value in localStorage
-  // eslint-disable-next-line qwik/no-use-visible-task
-  useVisibleTask$(() => {
+  // biome-ignore lint/correctness/noQwikUseVisibleTask: needed in this case
+    useVisibleTask$(() => {
     const storedTheme = localStorage.getItem(THEME_KEY);
 
     if (storedTheme && themes.includes(storedTheme as any)) {
