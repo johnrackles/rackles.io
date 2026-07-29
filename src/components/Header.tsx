@@ -1,11 +1,11 @@
-import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
 
 export const Header = component$(() => {
   return (
     <div class="navbar bg-primary text-primary-content">
       <div class="flex-1">
-        <Link href="/" class="btn-ghost btn text-xl normal-case">
+        <Link href="/" class="btn-ghost btn text-xl normal-case !text-white">
           rackles.io
         </Link>
       </div>
@@ -22,5 +22,5 @@ export const Header = component$(() => {
         </ul>
       </div>
     </div>
-  );
-});
+  )
+})
