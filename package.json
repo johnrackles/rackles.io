@@ -21,7 +21,7 @@
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist",
     "start": "vite --open --mode ssr",
-    "test": "npm run build.client && npm run build.preview && node ./scripts/smoke-test.mjs",
+    "test": "npm run prebuild && npm run build.client && npm run build.preview && node ./scripts/smoke-test.mjs",
     "test.smoke": "node ./scripts/smoke-test.mjs",
     "qwik": "qwik",
     "prepare": "husky"
@@ -55,14 +55,14 @@
   "dependencies": {
     "@builder.io/qwik-react": "^0.5.8",
     "@fontsource-variable/recursive": "^5.2.8",
-    "@react-pdf/renderer": "^4.3.2",
+    "@react-pdf/renderer": "^4.5.1",
     "@tailwindcss/vite": "^4.3.3",
-    "@types/react": "^19.2.8",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "clsx": "^2.0.0",
     "dayjs": "^1.11.19",
-    "react": "^19.2.3",
-    "react-dom": "^19.2.3"
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
   },
   "volta": {
     "node": "24"

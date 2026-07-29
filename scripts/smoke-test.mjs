@@ -18,6 +18,10 @@ const checks = [
     path: '/imprint/',
     expect: ['Impressum', 'Johannes Rackles'],
   },
+  {
+    path: '/CV_Johannes-Rackles.pdf',
+    expectBinary: '%PDF-',
+  },
 ];
 
 async function main() {
@@ -44,6 +48,15 @@ async function main() {
       const res = await fetch(url);
       if (!res.ok) {
         failures.push(`${url} -> HTTP ${res.status}`);
+        continue;
+      }
+      if (check.expectBinary) {
+        const buffer = Buffer.from(await res.arrayBuffer());
+        if (buffer.length === 0) {
+          failures.push(`${url} -> response body is empty`);
+        } else if (!buffer.toString('latin1', 0, 16).includes(check.expectBinary)) {
+          failures.push(`${url} -> unexpected file signature (not a valid PDF)`);
+        }
         continue;
       }
       const body = await res.text();
