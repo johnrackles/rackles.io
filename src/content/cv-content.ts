@@ -45,7 +45,11 @@ export const content = {
       timeframe: ["2011", "2014"],
     },
   ],
-  technologies: [
+  // Computed lazily (per call) instead of once at module load time, since
+  // Workers/edge runtimes can keep a module instance alive for a long time,
+  // which would otherwise freeze these "years of experience" values at
+  // whatever "now" happened to be when the module was first evaluated.
+  getTechnologies: () => [
     `React (${dayjs("2015").toNow(true)}) / Next.js (${dayjs("2019").toNow(
       true,
     )})`,

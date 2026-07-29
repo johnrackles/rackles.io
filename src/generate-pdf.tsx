@@ -157,7 +157,7 @@ const MyDocument = () => (
         <Text style={styles.headline}>Technologies</Text>
         <ListComponent
           style={styles.experience}
-          entries={content.technologies}
+          entries={content.getTechnologies()}
         />
       </View>
     </Page>

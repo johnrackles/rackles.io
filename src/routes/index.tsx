@@ -20,7 +20,7 @@ export default component$(() => {
         </a>
       </p>
       <p>
-        I've been working in this field for {dayjs("2015").toNow(true)} years
+        I've been working in this field for {dayjs("2015").toNow(true)}
         now, most of this time in online agencies, doing various{" "}
         <a href="#projects" class="link">
           projects
@@ -33,7 +33,7 @@ export default component$(() => {
       </p>
       <h2 id="technologies">Technologies:</h2>
       <ul>
-        {content.technologies.map((technology) => (
+        {content.getTechnologies().map((technology) => (
           <li key={technology}>{technology}</li>
         ))}
       </ul>
