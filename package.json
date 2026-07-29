@@ -21,6 +21,8 @@
     "preview": "qwik build preview && vite preview --open",
     "serve": "wrangler pages dev ./dist",
     "start": "vite --open --mode ssr",
+    "test": "npm run build.client && npm run build.preview && node ./scripts/smoke-test.mjs",
+    "test.smoke": "node ./scripts/smoke-test.mjs",
     "qwik": "qwik",
     "prepare": "husky"
   },
