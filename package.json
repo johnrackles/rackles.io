@@ -24,7 +24,7 @@
     "test": "npm run prebuild && npm run build.client && npm run build.preview && node ./scripts/smoke-test.mjs",
     "test.smoke": "node ./scripts/smoke-test.mjs",
     "qwik": "qwik",
-    "prepare": "husky"
+    "prepare": "lefthook install"
   },
   "devDependencies": {
     "@builder.io/qwik": "^1.20.0",
