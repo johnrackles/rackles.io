@@ -1,12 +1,12 @@
-import { component$, isDev, useServerData } from "@builder.io/qwik";
+import { component$, isDev, useServerData } from '@builder.io/qwik'
 import {
   QwikCityProvider,
   RouterOutlet,
   ServiceWorkerRegister,
-} from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+} from '@builder.io/qwik-city'
+import { RouterHead } from './components/router-head/router-head'
 
-import "./global.css";
+import './global.css'
 
 export default component$(() => {
   /**
@@ -15,7 +15,7 @@ export default component$(() => {
    *
    * Dont remove the `<head>` and `<body>` elements.
    */
-  const nonce = useServerData<string | undefined>("nonce");
+  const nonce = useServerData<string | undefined>('nonce')
 
   return (
     <QwikCityProvider>
@@ -42,5 +42,5 @@ export default component$(() => {
         {!isDev && <ServiceWorkerRegister nonce={nonce} />}
       </body>
     </QwikCityProvider>
-  );
-});
+  )
+})

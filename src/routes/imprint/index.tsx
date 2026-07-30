@@ -1,5 +1,5 @@
-import { component$ } from "@builder.io/qwik";
-import type { DocumentHead } from "@builder.io/qwik-city";
+import { component$ } from '@builder.io/qwik'
+import type { DocumentHead } from '@builder.io/qwik-city'
 
 export default component$(() => {
   return (
@@ -19,10 +19,10 @@ export default component$(() => {
         E-Mail: contact@rackles.io
       </p>
     </div>
-  );
-});
+  )
+})
 
 export const head: DocumentHead = {
-  title: "rackles.io | Imprint",
-  meta: [{ name: "description", content: "Contact John Rackles" }],
-};
+  title: 'rackles.io | Imprint',
+  meta: [{ name: 'description', content: 'Contact John Rackles' }],
+}

@@ -3,43 +3,43 @@ import {
   useSignal,
   useTask$,
   useVisibleTask$,
-} from "@builder.io/qwik";
-import { isServer } from "@builder.io/qwik/build";
+} from '@builder.io/qwik'
+import { isServer } from '@builder.io/qwik/build'
 
-export const THEME_KEY = "theme";
-export const themes = ["night", "winter"] as const;
+export const THEME_KEY = 'theme'
+export const themes = ['night', 'winter'] as const
 
 export default component$(() => {
-  const theme = useSignal<"night" | "winter" | undefined>();
+  const theme = useSignal<'night' | 'winter' | undefined>()
 
   // on render, set the theme to the value in localStorage
   // biome-ignore lint/correctness/noQwikUseVisibleTask: needed in this case
-    useVisibleTask$(() => {
-    const storedTheme = localStorage.getItem(THEME_KEY);
+  useVisibleTask$(() => {
+    const storedTheme = localStorage.getItem(THEME_KEY)
 
     if (storedTheme && themes.includes(storedTheme as any)) {
-      theme.value = storedTheme as (typeof themes)[number];
+      theme.value = storedTheme as (typeof themes)[number]
     }
-  });
+  })
 
   useTask$(({ track }) => {
-    const change = track(() => theme.value);
+    const change = track(() => theme.value)
 
     if (isServer) {
-      return; // Server guard
+      return // Server guard
     }
 
-    if (!change) return;
+    if (!change) return
 
-    localStorage.setItem(THEME_KEY, change);
-    document.documentElement.dataset.theme = change;
-  });
+    localStorage.setItem(THEME_KEY, change)
+    document.documentElement.dataset.theme = change
+  })
 
   return (
     <div class="flex flex-row items-center">
       <button
         onClick$={() => {
-          theme.value = "winter";
+          theme.value = 'winter'
         }}
       >
         <span
@@ -48,7 +48,7 @@ export default component$(() => {
         >
           🌞
         </span>
-      </button>{" "}
+      </button>{' '}
       <label for="theme-select" class="sr-only">
         Toggle Darkmode
       </label>
@@ -56,14 +56,14 @@ export default component$(() => {
         type="checkbox"
         class="toggle mx-2"
         id="theme-select"
-        checked={theme.value === "night"}
+        checked={theme.value === 'night'}
         onInput$={(_event, element) => {
-          theme.value = element.checked ? "night" : "winter";
+          theme.value = element.checked ? 'night' : 'winter'
         }}
-      />{" "}
+      />{' '}
       <button
         onClick$={() => {
-          theme.value = "night";
+          theme.value = 'night'
         }}
       >
         <span
@@ -74,5 +74,5 @@ export default component$(() => {
         </span>
       </button>
     </div>
-  );
-});
+  )
+})

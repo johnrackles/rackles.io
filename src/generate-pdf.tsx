@@ -3,49 +3,49 @@ import {
   Document,
   Link,
   Page,
+  renderToFile,
   StyleSheet,
   Text,
   View,
-  renderToFile,
-} from "@react-pdf/renderer";
-import { type Style } from "@react-pdf/types";
-import dayjs from "dayjs";
-import path from "path";
-import { content } from "~/content/cv-content";
+} from '@react-pdf/renderer'
+import { type Style } from '@react-pdf/types'
+import dayjs from 'dayjs'
+import path from 'path'
+import { content } from '~/content/cv-content'
 
 const colors = {
-  primary: "rgb(5, 122, 255)",
-  primaryContent: "rgb(219, 255, 255)",
-  background: "rgb(255, 255, 255)",
-  content: "rgba(57, 78, 106, 0.8)",
-} as const;
+  primary: 'rgb(5, 122, 255)',
+  primaryContent: 'rgb(219, 255, 255)',
+  background: 'rgb(255, 255, 255)',
+  content: 'rgba(57, 78, 106, 0.8)',
+} as const
 
 // Create styles
 const styles = StyleSheet.create({
   page: {
-    flexDirection: "column",
+    flexDirection: 'column',
     backgroundColor: colors.background,
-    fontFamily: "Helvetica",
-    color: "rgba(57, 78, 106, 0.8)",
+    fontFamily: 'Helvetica',
+    color: 'rgba(57, 78, 106, 0.8)',
   },
   head: {
     padding: 16,
-    justifyContent: "space-between",
-    flexDirection: "row",
-    backgroundColor: "rgb(5, 122, 255)",
+    justifyContent: 'space-between',
+    flexDirection: 'row',
+    backgroundColor: 'rgb(5, 122, 255)',
     color: colors.primaryContent,
-    alignItems: "center",
+    alignItems: 'center',
   },
   headAside: {
-    flexDirection: "column",
+    flexDirection: 'column',
     fontSize: 10,
-    justifyContent: "space-between",
+    justifyContent: 'space-between',
   },
   headLink: { color: colors.primaryContent, marginTop: 6 },
   content: { flexGrow: 1, padding: 16, marginVertical: 32 },
   headline: {
     fontSize: 12,
-    fontFamily: "Helvetica-Bold",
+    fontFamily: 'Helvetica-Bold',
     color: colors.primary,
     paddingBottom: 6,
     borderBottom: 1,
@@ -53,31 +53,31 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   experience: { marginBottom: 16 },
-});
+})
 
 const listStyles = StyleSheet.create({
-  list: { flexDirection: "column", fontSize: 10 },
-  entry: { flexDirection: "row", marginBottom: 4 },
+  list: { flexDirection: 'column', fontSize: 10 },
+  entry: { flexDirection: 'row', marginBottom: 4 },
   bullet: { marginRight: 4 },
-});
+})
 
 const jobStyle = StyleSheet.create({
   header: {
     fontSize: 10,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    fontFamily: "Helvetica-Bold",
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    fontFamily: 'Helvetica-Bold',
     marginBottom: 8,
   },
   view: { marginBottom: 16 },
-});
+})
 
 const ListComponent = ({
   entries,
   style,
 }: {
-  entries: readonly string[];
-  style?: Style;
+  entries: readonly string[]
+  style?: Style
 }) => {
   return (
     <View style={{ ...listStyles.list, ...style }}>
@@ -88,8 +88,8 @@ const ListComponent = ({
         </View>
       ))}
     </View>
-  );
-};
+  )
+}
 
 // Create Document Component
 const MyDocument = () => (
@@ -125,8 +125,8 @@ const MyDocument = () => (
                   {job.position} @ {job.company}
                 </Text>
                 <Text>
-                  {dayjs(job.timeframe[0]).format("MMMM YYYY")} -{" "}
-                  {dayjs(job.timeframe[1]).format("MMMM YYYY")}
+                  {dayjs(job.timeframe[0]).format('MMMM YYYY')} -{' '}
+                  {dayjs(job.timeframe[1]).format('MMMM YYYY')}
                 </Text>
               </View>
               <ListComponent entries={job.description} />
@@ -141,15 +141,15 @@ const MyDocument = () => (
               style={{
                 ...jobStyle.view,
                 fontSize: 10,
-                flexDirection: "row",
-                justifyContent: "space-between",
+                flexDirection: 'row',
+                justifyContent: 'space-between',
               }}
             >
               <Text>{job.position}</Text>
               <Text>{job.company}</Text>
-              <Text style={{ fontFamily: "Helvetica-Bold" }}>
-                {dayjs(job.timeframe[0]).format("MMMM YYYY")} -{" "}
-                {dayjs(job.timeframe[1]).format("MMMM YYYY")}
+              <Text style={{ fontFamily: 'Helvetica-Bold' }}>
+                {dayjs(job.timeframe[0]).format('MMMM YYYY')} -{' '}
+                {dayjs(job.timeframe[1]).format('MMMM YYYY')}
               </Text>
             </View>
           ))}
@@ -162,8 +162,8 @@ const MyDocument = () => (
       </View>
     </Page>
   </Document>
-);
+)
 await renderToFile(
   <MyDocument />,
-  path.join(__dirname, "../public/CV_Johannes-Rackles.pdf"),
-);
+  path.join(__dirname, '../public/CV_Johannes-Rackles.pdf'),
+)

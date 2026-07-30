@@ -1,6 +1,6 @@
-import { component$ } from "@builder.io/qwik";
-import { Link } from "@builder.io/qwik-city";
-import ThemeSelect from "./ThemeSelect";
+import { component$ } from '@builder.io/qwik'
+import { Link } from '@builder.io/qwik-city'
+import ThemeSelect from './ThemeSelect'
 
 export const Footer = component$(() => {
   return (
@@ -51,5 +51,5 @@ export const Footer = component$(() => {
 
       <p>Copyright © {new Date().getFullYear()} - All right reserved</p>
     </footer>
-  );
-});
+  )
+})
