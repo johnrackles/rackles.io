@@ -14,7 +14,7 @@ to Cloudflare Pages.
 - **Deployment**: Cloudflare Pages (via `wrangler`), adapter in
   `adapters/cloudflare-pages/`. Deploys run from GitHub Actions
   (`.github/workflows/test-and-deploy.yml`) after tests pass on push to
-  `master` -- Cloudflare Pages' own Git integration/auto-builds should be
+  `main` -- Cloudflare Pages' own Git integration/auto-builds should be
   disabled to avoid a second, untested deploy racing this one.
 - **Lint/format**: Biome (`biome.json`, replaces ESLint/Prettier for JS/TS/JSON;
   Prettier is still used for Tailwind class sorting plugin)
