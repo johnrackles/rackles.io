@@ -45,3 +45,9 @@ functions/**/*.js
 
 # generate the CV fresh on eery build
 public/CV*.pdf
+
+# Playwright
+/test-results
+/playwright-report
+/blob-report
+/playwright/.cache

@@ -23,6 +23,7 @@
     "start": "vite --open --mode ssr",
     "test": "npm run prebuild && npm run build.client && npm run build.preview && node ./scripts/smoke-test.mjs",
     "test.smoke": "node ./scripts/smoke-test.mjs",
+    "test.e2e": "npm run build.client && npm run build.preview && playwright test",
     "qwik": "qwik",
     "prepare": "lefthook install"
   },
@@ -30,6 +31,7 @@
     "@biomejs/biome": "^2.5.6",
     "@builder.io/qwik": "^1.20.0",
     "@builder.io/qwik-city": "^1.20.0",
+    "@playwright/test": "^1.62.0",
     "@tailwindcss/typography": "^0.5.20",
     "@types/node": "^24.13.3",
     "autoprefixer": "^10.5.4",
@@ -59,7 +61,8 @@
     "clsx": "^2.0.0",
     "dayjs": "^1.11.21",
     "react": "^19.2.8",
-    "react-dom": "^19.2.8"
+    "react-dom": "^19.2.8",
+    "uuid": "^14.0.1"
   },
   "volta": {
     "node": "24"
