@@ -15,7 +15,10 @@ to Cloudflare Pages.
   `adapters/cloudflare-pages/`. Deploys run from GitHub Actions
   (`.github/workflows/test-and-deploy.yml`) after tests pass on push to
   `main` -- Cloudflare Pages' own Git integration/auto-builds should be
-  disabled to avoid a second, untested deploy racing this one.
+  disabled to avoid a second, untested deploy racing this one. The deploy
+  job uses the `prod` GitHub Environment for its secrets/variables
+  (`CLOUDFLARE_API_TOKEN`, `CLOUDFLARE_ACCOUNT_ID`, `CLOUDFLARE_PROJECT_NAME`)
+  -- see Settings -> Environments -> prod in the repo.
 - **Lint/format**: Biome (`biome.json`, replaces ESLint/Prettier for JS/TS/JSON;
   Prettier is still used for Tailwind class sorting plugin)
 - **Git hooks**: Lefthook — runs `biome check --write` on staged files at
