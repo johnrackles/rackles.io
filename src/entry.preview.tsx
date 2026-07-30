@@ -13,6 +13,7 @@
 import { createQwikCity } from '@builder.io/qwik-city/middleware/node'
 import qwikCityPlan from '@qwik-city-plan'
 import render from './entry.ssr'
+import { env } from './lib/env'
 
 /**
  * The default export is the QwikCity adapter used by Vite preview.
@@ -29,5 +30,5 @@ import render from './entry.ssr'
 export default createQwikCity({
   render,
   qwikCityPlan,
-  getOrigin: () => process.env.ORIGIN ?? null,
+  getOrigin: () => env.ORIGIN ?? null,
 })

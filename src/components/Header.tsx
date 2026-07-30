@@ -3,9 +3,9 @@ import { Link } from '@builder.io/qwik-city'
 
 export const Header = component$(() => {
   return (
-    <div class="navbar bg-primary text-primary-content">
+    <header class="navbar bg-primary text-primary-content">
       <div class="flex-1">
-        <Link href="/" class="btn-ghost btn text-xl normal-case !text-white">
+        <Link href="/" class="btn-ghost btn text-xl normal-case text-white">
           rackles.io
         </Link>
       </div>
@@ -21,6 +21,6 @@ export const Header = component$(() => {
           </li>
         </ul>
       </div>
-    </div>
+    </header>
   )
 })

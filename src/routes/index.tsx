@@ -2,6 +2,7 @@ import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { content } from '~/content/cv-content'
 import { dayjs } from '~/lib/dayjs'
+import { env } from '~/lib/env'
 
 export default component$(() => {
   return (
@@ -19,57 +20,61 @@ export default component$(() => {
           Send me an E-Mail!
         </a>
       </p>
-      <p>
-        I've been working in this field for {dayjs('2015').toNow(true)}
-        now, most of this time in online agencies, doing various{' '}
-        <a href="#projects" class="link">
-          projects
-        </a>{' '}
-        and using a lot of different{' '}
-        <a href="#technologies" class="link">
-          technologies
-        </a>
-        .
-      </p>
-      <h2 id="technologies">Technologies:</h2>
-      <ul>
-        {content.getTechnologies().map((technology) => (
-          <li key={technology}>{technology}</li>
-        ))}
-      </ul>
-      <p>This list is just an overview, there have been many more.</p>
-      <h2 id="projects">Projects:</h2>
-      <ul>
-        <li>Marketing Landingpages</li>
-        <li>Magento Headless Frontends</li>
-        <li>SAP Commerce Headless Frontend</li>
-        <li>Store Finder</li>
-        <li>OpenAI Chat Interface</li>
-        <li>Hackernews clone built with qwik</li>
-      </ul>
-      <p>
-        Most of these projects are still online, so if you have questions
-        regarding a specific one, please{' '}
-        <a href="mailto:contact@rackles.io" class="link-hover link">
-          contact
-        </a>{' '}
-        me.
-      </p>
-      <h2 id="various">Other skills:</h2>
-      <ul>
-        <li>Next.js page performance optimizations</li>
-        <li>Technical SEO</li>
-      </ul>
-      <p>
-        If this sounds interesting to you, please feel free to{' '}
-        <a href="mailto:contact@rackles.io" class="link">
-          contact
-        </a>{' '}
-        me{' '}
-        <span role="img" aria-label="smiling face">
-          😊
-        </span>
-      </p>
+      {env.JOB_SEARCH === 'true' && (
+        <>
+          <p>
+            I've been working in this field for {dayjs('2015').toNow(true)}
+            now, most of this time in online agencies, doing various{' '}
+            <a href="#projects" class="link">
+              projects
+            </a>{' '}
+            and using a lot of different{' '}
+            <a href="#technologies" class="link">
+              technologies
+            </a>
+            .
+          </p>
+          <h2 id="technologies">Technologies:</h2>
+          <ul>
+            {content.getTechnologies().map((technology) => (
+              <li key={technology}>{technology}</li>
+            ))}
+          </ul>
+          <p>This list is just an overview, there have been many more.</p>
+          <h2 id="projects">Projects:</h2>
+          <ul>
+            <li>Marketing Landingpages</li>
+            <li>Magento Headless Frontends</li>
+            <li>SAP Commerce Headless Frontend</li>
+            <li>Store Finder</li>
+            <li>OpenAI Chat Interface</li>
+            <li>Hackernews clone built with qwik</li>
+          </ul>
+          <p>
+            Most of these projects are still online, so if you have questions
+            regarding a specific one, please{' '}
+            <a href="mailto:contact@rackles.io" class="link-hover link">
+              contact
+            </a>{' '}
+            me.
+          </p>
+          <h2 id="various">Other skills:</h2>
+          <ul>
+            <li>Next.js page performance optimizations</li>
+            <li>Technical SEO</li>
+          </ul>
+          <p>
+            If this sounds interesting to you, please feel free to{' '}
+            <a href="mailto:contact@rackles.io" class="link">
+              contact
+            </a>{' '}
+            me{' '}
+            <span role="img" aria-label="smiling face">
+              😊
+            </span>
+          </p>
+        </>
+      )}
     </div>
   )
 })
