@@ -10,7 +10,7 @@ export const onRequest: RequestHandler<PlatformCloudflarePages> = (event) => {
     `default-src 'self' 'unsafe-inline'`,
     `font-src 'self' data:`,
     `img-src 'self' 'unsafe-inline' data:`,
-    `script-src 'self' 'unsafe-inline' https: 'nonce-${nonce}' ajax.cloudflare.com`,
+    `script-src 'self' 'nonce-${nonce}' ajax.cloudflare.com`,
     `style-src 'self' 'unsafe-inline'`,
     `frame-src 'self'`,
     `object-src 'none'`,
