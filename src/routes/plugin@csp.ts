@@ -1,11 +1,12 @@
+import crypto from 'node:crypto'
 import { isDev } from '@builder.io/qwik'
 import type { RequestHandler } from '@builder.io/qwik-city'
 import type { PlatformCloudflarePages } from '@builder.io/qwik-city/middleware/cloudflare-pages'
-import { v6 as uuidv6 } from 'uuid'
 
 export const onRequest: RequestHandler<PlatformCloudflarePages> = (event) => {
   if (isDev) return // Will not return CSP headers in dev mode
-  const nonce = uuidv6()
+  const nonce = crypto.randomUUID()
+
   event.sharedMap.set('@nonce', nonce)
   const csp = [
     `default-src 'self' 'unsafe-inline'`,
